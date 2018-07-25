@@ -5,7 +5,7 @@
         <%= flash[:notice] %>
             <h2> User info </h2>
             <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
-            <table>
+            <table class="table">
                   <tr> </tr>
                   <tr>
                         <th> name </th>
@@ -39,9 +39,8 @@
 
       <div class="mypage-right">
             <div class=""> <h2> Book detail </h2> </div>
-
-            <div class="">
-                  <table>
+            <div>
+                  <table class="table">
                         <thread>
                               <th></th>
                         </thread>

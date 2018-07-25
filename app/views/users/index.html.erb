@@ -4,7 +4,7 @@
       <div class="mypage-left">
             <h2> User info </h2>
             <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
-            <table>
+            <table class="table">
                   <tr> </tr>
                   <tr>
                         <th> name </th>
@@ -17,7 +17,7 @@
             </table>
 
             <p>
-                  <button type="button"> <%= link_to "プロフ編集", edit_user_path(current_user) %> </button>
+                  <button type="button" class="btn btn-default glyphicon glyphicon-wrench"> <%= link_to "", edit_user_path(current_user), class: "edit_user_#{@user.id}" %> </button>
             </p>
 
             <div>
@@ -36,9 +36,9 @@
       </div>
 
       <div class="mypage-right">
-            <div class=""> <h2> Users </h2> </div>
-            <div class="">
-                  <table>
+            <div> <h2> Users </h2> </div>
+            <div>
+                  <table class="table table-hover">
                         <thread>
                               <th> image </th>
                               <th> name </th>
