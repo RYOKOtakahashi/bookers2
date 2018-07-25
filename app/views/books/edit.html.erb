@@ -1,0 +1,48 @@
+<!-- <div class="body-wrap">
+  <div id="st-container" class="st-container">
+    <div class="st-pusher">
+      <div class="st-content">
+        <div class="st-content-inner">
+          <section class="slice slice-lg sct-color-1">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4"> -->
+                          <div class="form-user style-1 rounded has-shadow-1">
+                                  <div class="form-header text-center">
+                                      <h2 class="form-header-title"> Editing Book </h2>
+                                  </div>
+                                  <div class="form-body">
+                                  <!-- <div class="form-group has-icon"> -->
+                                      <!-- <div class="user-edit-image"> -->
+                                          <%#= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+                                      <!-- </div> -->
+                                      <!-- <label class="control-label sr-only" for="inputEmail">ProfileImage</label> -->
+                                      <%#= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+                                  <!-- </div> -->
+                                  <%= form_for(@book) do |f| %>
+                                        <p> Title </p>
+                                        <%= f.text_field :title %>
+                                        <%#= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%>
+                                        <p> <!-- <label class="control-label sr-only" for="inputEmail"> --> Opinion </p>
+                                        <%= f.text_area :opinion %>
+                                        <!-- <span class="fa fa-user form-control-icon" aria-hidden="true"></span> -->
+                                        <%#= f.attachment_field :image_id, class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+                                        <%#= f.attachment_field :image %>
+                                        <%#= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%>
+                                        <!-- <span class="fa fa-user form-control-icon" aria-hidden="true"></span> -->
+                                        <p> <%= f.submit "Update Book" %> </p>
+                                  <% end %>
+                                        <span> <%= link_to "Show", book_path %> </span>
+                                        <span> | </span>
+                                        <span> <%= link_to "Back", books_path %> </span>
+                            </div>
+                          </div>
+                      <!-- </div>
+                  </div>
+              </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

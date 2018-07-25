@@ -1,0 +1,106 @@
+<p class="notice">  </p>
+
+<div class="body clearfix">
+      <div class="mypage-left">
+            <h2> User info </h2>
+            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
+            <table>
+                  <tr> </tr>
+                  <tr>
+                        <th> name </th>
+                        <th> <%= current_user.name %> </th>
+                  </tr>
+                  <tr>
+                        <th> introduction </th>
+                        <th> <%= current_user.introduction %> </th>
+                  </tr>
+            </table>
+
+            <p>
+                  <button type="button"> <%= link_to "プロフ編集", edit_user_path(current_user), class: "edit_user_#{@user.id}" %> </button>
+            </p>
+
+            <div>
+                  <h2> New book </h2>
+
+                  <%= form_for(@book) do |f| %>
+                  <h5> Title </h5>
+                  <%= f.text_field :title %>
+
+                  <h5> Opinion </h5>
+                  <%= f.text_area :opinion %>
+
+                  <p> <%= f.submit 'Create Book' %> </p>
+                  <% end %>
+            </div>
+      </div>
+
+      <div class="mypage-right">
+            <div class=""> <h2> Books </h2> </div>
+            <div class="">
+                  <table>
+                        <thread>
+                              <th></th>
+                              <th> Title </th>
+                              <th> Opinion </th>
+                              <th colspan="3"> </th>
+                        </thread>
+
+                        <tbody>
+                              <% @books.each do |f| %>
+                                    <tr>
+                                        <td> <%= link_to user_path do %> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg' %> <% end %>
+                                          <!-- <img src="no-image-icon.jpg" alt="no-image-icon.jpg"> --> </td>
+                                        <td> <%= link_to book_path(f.id) do %> <%= f.title %> <%#= link_to "", book_path(f.id) %> <% end %> </td>
+                                        <td> <%= f.opinion %> </td>
+                                    </tr>
+                              <% end %>
+                        </tbody>
+                  </table>
+            </div>
+      </div>
+</div>
+
+
+
+
+
+<!-- <div class="container-fluid masonry-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-offset-2">
+        <div class="masonry-wrapper-cols"> -->
+
+<!-- <div class="masonry-block">
+              <div class="block block-image v1"> -->
+<!-- <div class="block-image">
+                  <div class="view view-first">
+                  </div>
+                </div> -->
+
+<!--  <%#= attachment_image_tag user, :image %> -->
+<!-- <h3 class="block-title">
+                  </h3> -->
+
+<!--  <%#= image_tag('sample-author1.jpg', class: "img-circle pull-left profile-thumb") %>  -->
+<!--  <%#= link_to post_image_path(post_image.id) do %>  -->
+                     <!-- <i class="fa fa-map-marker"><%#= user.name %> </i> -->
+         <%# end %>
+
+<!-- <p><%#= user.introduction %></p> -->
+
+<!-- <img> <%#= user.book.image_id %> </img> -->
+
+<%#= f.attachment_field :image %>
+
+    <!-- <li> -->
+      <%# if @user_book.user == current_user %>
+      <%#= link_to "destroy", user_path(@user_book), method: :delete %>
+      <%# end %>
+    <!-- </li> -->
+
+    <!-- <li>
+      <a href="#">23 コメント</a>
+    </li> -->
+
+    <!-- <h3 class="profile-name"><%#= @user.name %></h3> -->
+      <%#= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>

@@ -1,0 +1,117 @@
+<p class="notice">  </p>
+
+<div class="body clearfix">
+      <div class="mypage-left">
+        <%= flash[:notice] %>
+            <h2> User info </h2>
+            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
+            <table>
+                  <tr> </tr>
+                  <tr>
+                        <th> name </th>
+                        <th> <%= current_user.name %> </th>
+                  </tr>
+                  <tr>
+                        <th> introduction </th>
+                        <th> <%= current_user.introduction %> </th>
+                  </tr>
+            </table>
+
+            <p>
+                  <button type="button"> <%= link_to "プロフ編集", edit_user_path(current_user), class: "" %> </button>
+            </p>
+
+            <div>
+                  <h2> New book </h2>
+
+                  <%= form_for(@book) do |f| %>
+                  <h5> Title </h5>
+                  <%= f.text_field :title %>
+
+                  <h5> Opinion </h5>
+                  <%= f.text_area :opinion %>
+
+                  <p> <%= f.submit 'Create Book' %> </p>
+                  <% end %>
+            </div>
+      </div>
+
+
+      <div class="mypage-right">
+            <div class=""> <h2> Book detail </h2> </div>
+
+            <div class="">
+                  <table>
+                        <thread>
+                              <th></th>
+                        </thread>
+
+                        <tbody>
+                                    <tr>
+                                        <td> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg' %> </td>
+                                        <td> <%= @bookf.title %> </td>
+                                        <td> <%= @bookf.opinion %> </td>
+                                        <!-- <td> <button> <%#= link_to "edit", edit_book_path(current_user.id) %> </button> </td> -->
+                                        <td> <button> <%= link_to "edit", edit_book_path(@bookf.id) %> </button> </td>
+                                        <td> <button> <%= link_to "destroy", book_path(@bookf.id), method: :'delete', "data-confirm" => "本当に消しますか？"%> </button> </td>
+                                    </tr>
+                        </tbody>
+                  </table>
+            </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+<!-- <section class="mypage-right sct-color-1 slice">
+  <div class="container-fluid masonry-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-offset-2">
+        <div class="masonry-wrapper-cols">
+          <div class="masonry-gutter"> <h2> Book detail </h2> </div>
+              <ul class="inline-meta">
+                    <li>
+                      <img> <%#= user.book.image_id %> </img>
+                      <img src="no-image-icon.jpg" alt="no-image-icon.jpg"> </img>
+                    </li>
+                    <%#@book.each do |book| %>
+                    <li>
+                      <p> <%#= book.title %> </p>
+                    </li>
+                    <li>
+                      <p> <%#= book.opinion %> </p>
+                    </li>
+                    <%# end %>
+                    <%# if @user_book.user == current_user %>
+                    <li>
+                      <%#= form_for(@book) do |f| %>
+                      <%#= f.submit 'edit' %>
+                      <%# if @user_book.user == current_user %>
+                      <button> <%#= link_to "edit", edit_book_path(current_user.id) %> </button>
+                    <%# end %>
+                    </li>
+                    <li>
+                      <%#= form_for(@book) do |f| %>
+                      <%# if @user_book.user == current_user %>
+                      <button> <%#= link_to 'destroy', books_path(@book), method: :delete %> </button>
+                      <%#= link_to "destroy", user_path(@user_book), method: :delete %>
+                    <%# end %>
+                    </li>
+
+                    <li>
+                    <a href="#">23 コメント</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <%# end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->

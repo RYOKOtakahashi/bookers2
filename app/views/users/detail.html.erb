@@ -1,0 +1,83 @@
+<p class="notice">  </p>
+
+<div class="mypage-left">
+  <h2> User info </h2>
+  <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
+  <h5> name </h5>
+  <h5> introduction </h5>
+
+  <div class="profile-container">
+      <!-- <h3 class="profile-name"><%#= @user.name %></h3> -->
+      <%#= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+      <% if @user.id == current_user.id %>
+      <p>
+        <button type="button"> <%= link_to "プロフ編集", edit_user_path(@user), class: "pull-right" %> </button>
+      </p>
+      <% end %>
+  </div>
+
+<div>
+  <h2> New book </h2>
+  <%= form_for(@book) do |f| %>
+
+  <h5> Title </h5>
+  <%= f.text_field :title %>
+
+  <h5> Opinion </h5>
+  <%= f.text_area :title %>
+
+  <p> <%= f.submit 'Create Book' %> </p>
+  <%#= f.attachment_field :image %>
+  <% end %>
+</div>
+
+<section class="mypage-right sct-color-1 slice">
+  <div class="container-fluid masonry-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-offset-2">
+        <div class="masonry-wrapper-cols">
+          <div class="masonry-gutter"> <h2> Book detail </h2> </div>
+          <span> profile image </span>
+          <span> title </span>
+          <span> opinion </span>
+          <span> edit </span>
+          <span> destroy </span>
+         <% @users.each do |user| %>
+            <div class="masonry-block">
+              <div class="block block-image v1">
+                <div class="block-image">
+                  <div class="view view-first">
+                   <!--  <%#= attachment_image_tag user, :image %> -->
+                  </div>
+                </div>
+                <div class="block-content">
+                 <!--  <%#= image_tag('sample-author1.jpg', class: "img-circle pull-left profile-thumb") %>  -->
+                  <h3 class="block-title">
+        <!--  <%#= link_to post_image_path(post_image.id) do %>  -->
+                     <i class="fa fa-map-marker"></i><%= user.name %>
+         <%# end %>
+                  </h3>
+                  <!-- <p><%#= user.introduction %></p> -->
+                  <ul class="inline-meta">
+                    <li>
+                      <%#= user.book.image_id %>
+                    </li>
+                    <!-- <li>
+                    <a href="#">23 コメント</a>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- <li> -->
+      <%# if @user_book.user == current_user %>
+      <%#= link_to "destroy", user_path(@user_book), method: :delete %>
+      <%# end %>
+    <!-- </li> -->

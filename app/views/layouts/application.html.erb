@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <%= csrf_meta_tags %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bookers2 </title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  </head>
+
+
+  <body>
+
+    <div class="header" id="header">
+      <nav class="navbar navbar-main navbar-shadow" role="navigation" id="slide-nav">
+        <div class="container relative">
+          <div class="navbar-header">
+            <span>
+              <strong> Bookers </strong>
+            </span>
+            <!-- <a class="navbar-logo" href="/">
+            </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+            </button> -->
+          </div>
+
+          <div id="slidemenu">
+            <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+              <% if user_signed_in? %>
+                <li class="nav-inside">
+                  <%= link_to "Home", user_path(current_user.id), method: :get, class: "home" %>
+                  <%#= link_to "Home", new_user_session_path, method: :get%>
+                </li>
+                <li class="nav-inside">
+                  <%= link_to 'Users', users_path, method: :get, class: "users"%>
+                </li>
+                <li class="nav-inside">
+                  <%= link_to 'Books', books_path, method: :get, class: "books" %>
+                </li>
+                <li class="nav-inside">
+                  <%= link_to 'logout', destroy_user_session_path, method: :delete, class: "logout" %>
+                </li>
+              <% else %>
+                <li class="nav-inside">
+                  <%= link_to "Home", root_path, method: :get, class: "home" %>
+                </li>
+                <li class="nav-inside">
+                  <%= link_to "About", about_path,method: :get, class: "about" %>
+                </li>
+                <li class="nav-inside">
+                  <%= link_to "sign up", new_user_registration_path,method: :get, class: "sign_up"%>
+                </li>
+                <li class="nav-inside">
+                  <%= link_to "login", new_user_session_path,method: :get, class: "sign_in" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <%= yield %>
+
+   <footer class="footer style-2">
+    <p> CopyRight Infratop.inc </p>
+<!--       <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="col">
+              <br>
+              <p class="no-margin" style="font-size: 11px;">
+              <br>
+              善良な市民同士で無差別に食欲を煽るSNS
+          </p>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="col">
+              <h4>Link</h4>
+              <ul>
+                <li>
+                  <a href="" title="About">会社概要</a>
+                </li>
+                <li>
+                  <a href="" title="License informations">プライバシーポリシー</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </footer>
+    
+  </body>
+</html>

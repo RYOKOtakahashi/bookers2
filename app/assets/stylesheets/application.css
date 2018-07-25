@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 	@import "bootstrap-sprockets";
+    @import "bootstrap";
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 50px;
+}
+
+
+.navbar-shadow {
+	background-color: black;
+	color: white;
+	height: 50px;
+}
+.container {
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+.navbar-header {
+	float: left;
+}
+
+.nav {
+	-webkit-padding-start: 0px;
+}
+
+.nav-inside {
+	display: inline;
+	float: center;
+	list-style-type: none;
+}
+
+
+.footer {
+	text-align: right;
+	font-size: 13px;
+	margin-right: 200px;
+}
+
+.field {
+	margin-bottom: 10px;
+}
+
+
+.top-text {
+	text-align: left;
+	margin-left: 200px;
+}
+.sign-inside {
+	text-decoration: none;
+}
+.sign {
+	text-align: center;
+}
+
+.signup-inside {
+	margin-left: 200px;
+}
+.login-inside {
+	margin-left: 200px;
+}
+.about-text {
+	margin-left: 200px;
+}
+
+.pull-right {
+	text-decoration: none;
+}
+
+.mypage-left {
+	float: left;
+}
+.mypage-right {
+	float: left;
+}
+
