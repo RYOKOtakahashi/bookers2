@@ -16,6 +16,7 @@
  	@import "bootstrap-sprockets";
     @import "bootstrap";
 
+
 .clearfix::after {
   content: "";
   display: block;
@@ -23,72 +24,65 @@
   height: 50px;
 }
 
-
-.navbar-shadow {
-	background-color: black;
-	color: white;
-	height: 50px;
-}
-.container {
+.onepage-container {
 	margin-left: 200px;
 	margin-right: 200px;
 }
 
-.navbar-header {
+
+
+.btn-top {
+	position: center;
+}
+
+.top-text {
+	text-align: left;
+}
+
+
+
+.my-container-left {
 	float: left;
+	width: 15%;
+	margin-right: 10px;
 }
-
-.nav {
-	-webkit-padding-start: 0px;
-}
-
-.nav-inside {
-	display: inline;
-	float: center;
-	list-style-type: none;
+.my-container-right {
+	float: left;
+	width: 80%
 }
 
 
-.footer {
-	text-align: right;
-	font-size: 13px;
-	margin-right: 200px;
-}
 
 .field {
 	margin-bottom: 10px;
 }
 
 
-.top-text {
-	text-align: left;
-	margin-left: 200px;
-}
-.sign-inside {
-	text-decoration: none;
-}
-.sign {
-	text-align: center;
-}
 
-.signup-inside {
-	margin-left: 200px;
+.navbar-shadow {
+	background-color: black;
+	color: white;
+	height: 50px;
 }
-.login-inside {
-	margin-left: 200px;
-}
-.about-text {
-	margin-left: 200px;
-}
-
-.pull-right {
-	text-decoration: none;
-}
-
-.mypage-left {
+.navbar-header {
 	float: left;
 }
-.mypage-right {
-	float: left;
+.nav-inside {
+	display: inline;
+	float: center;
+	list-style-type: none;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+.footer {
+	text-align: right;
+	font-size: 13px;
+	margin-right: 200px;
 }
 
+
+
+
+.message {
+	color: red;
+}

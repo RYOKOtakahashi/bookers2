@@ -1,8 +1,7 @@
-<p class="notice">  </p>
-
 <div class="body clearfix">
-      <div class="mypage-left">
-        <%= flash[:notice] %>
+  <div class="my-container">
+      <div class="my-container-left">
+        <div class="message"> <%= flash[:notice] %> </div>
             <h2> User info </h2>
             <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
             <table class="table">
@@ -18,7 +17,9 @@
             </table>
 
             <p>
-                  <button type="button"> <%= link_to "プロフ編集", edit_user_path(current_user), class: "" %> </button>
+                  <a href="/users/<%= @user.id %>/edit" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"> </a>
+                  <!-- <button type="button"> <%#= link_to "プロフ編集", edit_user_path(current_user), class: "" %> </button> -->
+                  <!-- <button class="btn btn-default glyphicon glyphicon-wrench"> <%#= link_to "", edit_user_path(current_user), class: "edit_user_#{@user.id}" %> </button> -->
             </p>
 
             <div>
@@ -36,8 +37,7 @@
             </div>
       </div>
 
-
-      <div class="mypage-right">
+      <div class="my-container-right">
             <div class=""> <h2> Book detail </h2> </div>
             <div>
                   <table class="table">
@@ -51,13 +51,15 @@
                                         <td> <%= @bookf.title %> </td>
                                         <td> <%= @bookf.opinion %> </td>
                                         <!-- <td> <button> <%#= link_to "edit", edit_book_path(current_user.id) %> </button> </td> -->
-                                        <td> <button> <%= link_to "edit", edit_book_path(@bookf.id) %> </button> </td>
-                                        <td> <button> <%= link_to "destroy", book_path(@bookf.id), method: :'delete', "data-confirm" => "本当に消しますか？"%> </button> </td>
+                                        <td> <!-- <a href="/books/<%= @bookf.id %>/edit" class="btn-sm btn-success"> Edit </a> </td> --> <button class="btn-sm btn-success"> <%= link_to "edit", edit_book_path(@bookf.id) %> </button> </td>
+                                        <td>
+                                        <td><!--  <a href="/books/" class="btn-sm btn-danger" data-confirm="本当に消しますか？"> Destroy </a> </td> --> <button class="btn-sm btn-danger"> <%= link_to "destroy", book_path(@bookf.id), method: :'delete', "data-confirm" => "本当に消しますか？"%> </button> </td>
                                     </tr>
                         </tbody>
                   </table>
             </div>
       </div>
+    </div>
 </div>
 
 

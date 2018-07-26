@@ -14,13 +14,18 @@ class UsersController < ApplicationController
 	end
 
 	# def create
-	# 	book = Book.new(book_params)
- #    if  @book.save
- #    	flash[:notice] = "successfully created"
- #        redirect_to user_path
- #    else
- #    	@books = Book.all
-	#     render :new
+	# @book = Book.new(book_params)
+ # 	if  @book.save
+ #  			#  flash[:notice] = "successfully created"
+	# redirect_to user_path
+	# else
+ # 			#  @books = Book.all
+	# @users =User.all
+	# @user = User.find(params[:id])
+	# @book = Book.new
+	# @books = Book.all
+	# render :show
+	# end
 	# end
 
 	# def create
@@ -59,12 +64,25 @@ class UsersController < ApplicationController
 		@users =User.all
 	end
 
+	# def update
+	# 	user = User.find(params[:id])
+ #    	user.update(user_params)
+ #    	redirect_to user_path
+    			# redirect_to user_path(user.id)
+	# end
+
 	def update
-		user = User.find(params[:id])
-    	user.update(user_params)
-    	redirect_to user_path
-    	# redirect_to user_path(user.id)
+	@user = User.find(params[:id])
+ 	if  @user.update(user_params)
+ 				#  flash[:notice] = "successfully created"
+ 	redirect_to user_path
+ 	else
+  				#  @books = Book.all
+	@users =User.all
+	render :edit
 	end
+	end
+
 
 	def destroy
     	@user_book = user.find(params[:id])
@@ -74,7 +92,7 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-	    params.require(:user).permit(:image, :introduction, :name)
+	    params.require(:user).permit(:image, :introduction, :name, :edit)
 	end
 
 end

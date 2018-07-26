@@ -1,9 +1,14 @@
-<p class="notice">  </p>
 
 <div class="body clearfix">
-      <div class="mypage-left">
+  <div class="my-container">
+      <div class="my-container-left">
+
             <h2> User info </h2>
             <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
+            <!-- <img class="attachment user profile_image" src="" alt="Profile image"> -->
+            
+            <%#= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "Profile image" %>
+            <!-- <img src="no-image-icon.jpg" alt="no-image-icon.jpg"> -->
             <table class="table">
                   <tr> </tr>
                   <tr>
@@ -17,7 +22,8 @@
             </table>
 
             <p>
-                  <button type="button" class="btn btn-default glyphicon glyphicon-wrench"> <%= link_to "", edit_user_path(current_user), class: "edit_user_#{@user.id}" %> </button>
+              <a href="/users/<%= @user.id %>/edit" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"> </a>
+                  <!-- <button class="btn btn-default glyphicon glyphicon-wrench"> <%#= link_to "", edit_user_path(current_user), class: "edit_user_#{@user.id}" %> </button> -->
             </p>
 
             <div>
@@ -35,7 +41,7 @@
             </div>
       </div>
 
-      <div class="mypage-right">
+      <div class="my-container-right">
             <div class=""> <h2> Books </h2> </div>
             <div class="">
                   <table class="table table-hover">
@@ -59,6 +65,7 @@
                   </table>
             </div>
       </div>
+    </div>
 </div>
 
 
