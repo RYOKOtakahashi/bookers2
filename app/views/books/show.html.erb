@@ -3,7 +3,7 @@
       <div class="my-container-left">
         <div class="message"> <%= flash[:notice] %> </div>
             <h2> User info </h2>
-            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image-1.png" %>
+            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "alien-smiley-icon.png" %>
             <table class="table">
                   <tr> </tr>
                   <tr>
@@ -47,7 +47,7 @@
 
                         <tbody>
                                     <tr>
-                                        <td> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg' %> </td>
+                                        <td> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg', fallback: "alien-smiley-icon.png" %> </td>
                                         <td> <%= @bookf.title %> </td>
                                         <td> <%= @bookf.opinion %> </td>
                                         <!-- <td> <button> <%#= link_to "edit", edit_book_path(current_user.id) %> </button> </td> -->

@@ -4,7 +4,7 @@
   <div class="my-container">
       <div class="my-container-left">
             <h2> User info </h2>
-            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image-1.png" %>
+            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image-1.png", fallback: "alien-smiley-icon.png" %>
             <table class="table">
                   <tr> </tr>
                   <tr>
@@ -47,11 +47,17 @@
                         </thread>
 
                         <tbody>
-                              <% @users.each do |f| %>
+                              <% @users.each do |user| %>
                                     <tr>
-                                        <td> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg' %> </td>
-                                        <td> <%= f.name %> </td>
-                                        <td> <%= link_to "Show", user_path(f.id), class: "user_#{f.id}" %> </td>
+                                        <td> 
+                                          <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg', fallback: "alien-smiley-icon.png" %> 
+                                        </td>
+                                        <td> 
+                                          <%= user.name %> 
+                                        </td>
+                                        <td> 
+                                          <%= link_to "Show", user_path(user.id), class: "user_#{user.id}" %> 
+                                        </td>
                                     </tr>
                               <% end %>
                         </tbody>
