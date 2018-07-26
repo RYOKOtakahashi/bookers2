@@ -4,7 +4,7 @@
   <div class="my-container">
       <div class="my-container-left">
             <h2> User info </h2>
-            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
+            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image-1.png" %>
             <table class="table">
                   <tr> </tr>
                   <tr>
@@ -18,7 +18,7 @@
             </table>
 
             <p>
-              <a href="/users/<%= @user.id %>/edit" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"> </a>
+              <a href="/users/<%= @user.id %>/edit" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{@user.id}"> </a>
             </p>
 
             <div>
@@ -26,10 +26,10 @@
 
                   <%= form_for(@book) do |f| %>
                   <h5> Title </h5>
-                  <%= f.text_field :title %>
+                  <%= f.text_field :title, class: "book_title" %>
 
                   <h5> Opinion </h5>
-                  <%= f.text_area :opinion %>
+                  <%= f.text_area :opinion, class: "book_body" %>
 
                   <p> <%= f.submit 'Create Book' %> </p>
                   <% end %>
@@ -51,7 +51,7 @@
                                     <tr>
                                         <td> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg' %> </td>
                                         <td> <%= f.name %> </td>
-                                        <td> <%= link_to "Show", user_path(f.id) %> </td>
+                                        <td> <%= link_to "Show", user_path(f.id), class: "user_#{f.id}" %> </td>
                                     </tr>
                               <% end %>
                         </tbody>

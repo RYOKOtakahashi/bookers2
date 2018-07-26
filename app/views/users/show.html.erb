@@ -4,7 +4,7 @@
       <div class="my-container-left">
 
             <h2> User info </h2>
-            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg' %>
+            <%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no-image-icon.jpg" %>
             <!-- <img class="attachment user profile_image" src="" alt="Profile image"> -->
             
             <%#= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "Profile image" %>
@@ -22,7 +22,7 @@
             </table>
 
             <p>
-              <a href="/users/<%= @user.id %>/edit" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"> </a>
+              <a href="/users/<%= @user.id %>/edit" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{@user.id}"> </a>
                   <!-- <button class="btn btn-default glyphicon glyphicon-wrench"> <%#= link_to "", edit_user_path(current_user), class: "edit_user_#{@user.id}" %> </button> -->
             </p>
 
@@ -31,10 +31,10 @@
 
                   <%= form_for(@book) do |f| %>
                   <h5> Title </h5>
-                  <%= f.text_field :title %>
+                  <%= f.text_field :title, class: "book_title" %>
 
                   <h5> Opinion </h5>
-                  <%= f.text_area :opinion %>
+                  <%= f.text_area :opinion, class: "book_body" %>
 
                   <p> <%= f.submit 'Create Book' %> </p>
                   <% end %>
@@ -55,9 +55,9 @@
                         <tbody>
                               <% @books.each do |f| %>
                                     <tr>
-                                        <td> <%= link_to user_path do %> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg' %> <% end %>
+                                        <td> <%= link_to user_path(@user.id), class: "book_#{@user.id}" do %> <%= attachment_image_tag @user, :image, :fill, 30, 30, format: 'jpeg' %> <% end %>
                                           <!-- <img src="no-image-icon.jpg" alt="no-image-icon.jpg"> --> </td>
-                                        <td> <%= link_to book_path(f.id) do %> <%= f.title %> <%#= link_to "", book_path(f.id) %> <% end %> </td>
+                                        <td> <%= link_to book_path(f.id), class: "book_#{f.id}" do %> <%= f.title %> <%#= link_to "", book_path(f.id) %> <% end %> </td>
                                         <td> <%= f.opinion %> </td>
                                     </tr>
                               <% end %>

@@ -34,9 +34,9 @@
                                         <!-- <span class="fa fa-user form-control-icon" aria-hidden="true"></span> -->
                                         <p> <%= f.submit "Update Book" %> </p>
                                   <% end %>
-                                        <span> <%= link_to "Show", book_path %> </span>
+                                        <span> <%= link_to "Show", book_path(@book.id), class: "book_#{@book.id}" %> </span>
                                         <span> | </span>
-                                        <span> <%= link_to "Back", books_path %> </span>
+                                        <span> <%= link_to "Back", books_path, class: "back" %> </span>
 
                             </div>
                           </div>

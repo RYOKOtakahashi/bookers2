@@ -14,16 +14,16 @@
 
              <%= form_for(@user) do |f| %>
                   <!-- <p class="control-label sr-only" for="inputEmail"> --> <label> Name </label>
-                  <span> <%#= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%> <%= f.text_field :name, autofocus: true, id:"inputEmail", placeholder:"名前"%> </span>
+                  <span> <%#= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%> <%= f.text_field :name, class: "name", autofocus: true, id:"inputEmail", placeholder:"名前"%> </span>
 
                    <!-- <p class="control-label sr-only" for="inputEmail"> Image </p> -->
                    <p> <label> Image </label> </p>
-                   <p> <%= f.attachment_field :image %> </p>
+                   <p> <%= f.attachment_field :image, class: "user_image" %> </p>
 
                    <!-- <p> <label class="control-label sr-only" for="inputEmail"> Introduction </label> </p> -->
                    <label> Introduction </label>
                    <!-- <textarea class="introduction" name="introduction"></textarea> -->
-                    <%= f.text_field :introduction, autofocus: true, placeholder:"introduction"%>
+                    <%= f.text_field :introduction, class: "introduction", autofocus: true, placeholder:"introduction"%>
                    <%#= f.text_field :introduction, autofocus: true, class:"form-control", id:"inputEmail", placeholder:""%>
                     <!-- <span class="fa fa-user form-control-icon" aria-hidden="true"></span> -->
                     <p> <input type="submit" value="Update User" data-disable-with="Update User"> </p>
