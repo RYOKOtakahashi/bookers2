@@ -17,7 +17,8 @@
                               </tr>
                         </table>
                         <p>
-                              <a href="/users/<%= @user.id %>/edit" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{@user.id}"> </a>
+                              <%= link_to edit_user_path(@user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{@user.id}" do %>
+              <% end %>
                         </p>
                         <div>
                               <div class=message> 

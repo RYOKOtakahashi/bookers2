@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :authenticate_user!, except: [:top, :about, :new_user_session_path, :new_user_registration_path]
 
 	def top
 	end
@@ -57,6 +58,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@book = Book.new
 		@books = Book.all
+		
 	end
 
 	def edit

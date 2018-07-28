@@ -23,10 +23,10 @@
 
                                   <%= form_for(@book) do |f| %>
                                         <p> Title </p>
-                                        <%= f.text_field :title %>
+                                        <%= f.text_field :title, class: "book_title" %>
                                         <%#= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%>
                                         <p> <!-- <label class="control-label sr-only" for="inputEmail"> --> Opinion </p>
-                                        <%= f.text_area :opinion %>
+                                        <%= f.text_area :opinion, class: "book_body" %>
                                         <!-- <span class="fa fa-user form-control-icon" aria-hidden="true"></span> -->
                                         <%#= f.attachment_field :image_id, class:"btn btn-lg btn-block btn-base-1 mt-20" %>
                                         <%#= f.attachment_field :image %>
